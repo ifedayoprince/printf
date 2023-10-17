@@ -41,5 +41,7 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
 
+
+    _printf("Carry %S", "Best\nSchool");
     return (0);
 }

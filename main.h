@@ -13,8 +13,8 @@ int _printf(const char *format, ...);
 int print_format(const char *specifier, va_list args);
 
 /* Printer functions */
-int print_str(char *str);
+int print_str(char *str, bool caps);
 int print_char(int c);
-int print_digit(long digit, int base, bool caps);
+int print_digit(long n, int base, bool caps, bool fromS);
 
 #endif
