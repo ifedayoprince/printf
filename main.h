@@ -11,7 +11,7 @@
 int _printf(const char *format, ...);
 int print_format(const char *specifier, va_list args);
 
-// Printer functions
+/* Printer functions */
 int print_str(char *str);
 int print_char(int c);
 int print_digit(long digit, int base);

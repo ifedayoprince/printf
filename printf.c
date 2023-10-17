@@ -9,7 +9,7 @@
 #include <stdarg.h>
 #include "main.h"
 
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
     va_list args;
     int count =0;
@@ -28,4 +28,5 @@ void _printf(const char *format, ...)
     }
 
     va_end(args);
+    return (0);
 }

@@ -12,15 +12,17 @@
 int print_format(const char *specifier, va_list args)
 {
     int count = 0;
-    // d, f, c, x, p, s
+    /* d, f, c, x, p, s */
     if (*specifier == 's')
         count += print_str(va_arg(args, char *));
     else if (*specifier == 'c')
         count += print_char(va_arg(args, int));
-    else if (*specifier == 'd')
+    else if (*specifier == 'd' || *specifier == 'i')
         count += print_digit((long)va_arg(args, int), 10);
     else if (*specifier == 'x')
         count += print_digit((long)va_arg(args, unsigned int), 16);
+        else if (*specifier == 'b')
+        count += print_digit((long)va_arg(args, unsigned int), 2);
     else
         count += write(1, &specifier, 1);
 
