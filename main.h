@@ -7,6 +7,7 @@
  */
 
 #include <stdarg.h>
+#include <stdbool.h>
 
 int _printf(const char *format, ...);
 int print_format(const char *specifier, va_list args);
@@ -14,6 +15,6 @@ int print_format(const char *specifier, va_list args);
 /* Printer functions */
 int print_str(char *str);
 int print_char(int c);
-int print_digit(long digit, int base);
+int print_digit(long digit, int base, bool caps);
 
 #endif

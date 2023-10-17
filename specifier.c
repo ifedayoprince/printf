@@ -18,13 +18,21 @@ int print_format(const char *specifier, va_list args)
     else if (*specifier == 'c')
         count += print_char(va_arg(args, int));
     else if (*specifier == 'd' || *specifier == 'i')
-        count += print_digit((long)va_arg(args, int), 10);
+        count += print_digit((long)va_arg(args, int), 10, false);
+    else if (*specifier == 'u')
+        count += print_digit((long)va_arg(args, unsigned int), 10, false);
+    else if (*specifier == 'X')
+        count += print_digit((long)va_arg(args, unsigned int), 16, true);
     else if (*specifier == 'x')
-        count += print_digit((long)va_arg(args, unsigned int), 16);
-        else if (*specifier == 'b')
-        count += print_digit((long)va_arg(args, unsigned int), 2);
+        count += print_digit((long)va_arg(args, unsigned int), 16, false);
+    else if (*specifier == 'b')
+        count += print_digit((long)va_arg(args, unsigned int), 2, false);
+    else if (*specifier == 'o')
+        count += print_digit((long)va_arg(args, unsigned int), 8, false);
+    else if (*specifier == '%')
+        count += print_char((int)*specifier);
     else
-        count += write(1, &specifier, 1);
+        count += print_char((int)*specifier);
 
     return count;
 }
