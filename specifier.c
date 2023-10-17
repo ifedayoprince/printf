@@ -9,10 +9,18 @@
 #include <stdarg.h>
 #include "main.h"
 
+
+/**
+ * print_format - Pairs a specifier to an arg and prints it.
+ * @specifier: The specifier.
+ * @args: The list of arguments passed to _printf.
+ * 
+ * Return: The number of bytes written.
+ */
 int print_format(const char *specifier, va_list args)
 {
     int count = 0;
-    /* d, f, c, x, p, s */
+    
     if (*specifier == 's')
         count += print_str(va_arg(args, char *));
     else if (*specifier == 'c')
