@@ -76,3 +76,26 @@ int print_hex_upper(void *numPtr, param params)
 
     return base_converter(hexValue, 16, characterSet) + charCount;
 }
+
+/**
+ * print_hex_unsigned - Prints an unsigned integer as a hexidecimal in uppercase
+ * format
+ * @uhp: Void pointer to an adress in memory which holds an unsigned integer
+ * @params: a structure containing info about the argument
+ * Return: The number of characters printed
+ */
+int print_hex_unsigned(void *uhp, param params)
+{
+	unsigned int hex = *(unsigned int *)uhp;
+	char *set = "0123456789ABCDEF";
+	int count = 0;
+
+	if (params.pound && hex != 0)
+	{
+		_putchar('0');
+		_putchar('X');
+		count += 2;
+	}
+
+	return (base_converter(hex, 16, set) + count);
+}
