@@ -26,7 +26,7 @@ int print_pointer(void *p, param params)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-		return 6;
+		return (6);
 	}
 
 	if (params.plus)

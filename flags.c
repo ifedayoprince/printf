@@ -47,7 +47,7 @@ int setflags(const char *string, param *p)
 		offset++;
 	}
 
-	return offset;
+	return (offset);
 }
 
 /**
@@ -67,7 +67,7 @@ int setwidth(const char *string, param *p)
 		offset++;
 	}
 
-	return offset;
+	return (offset);
 }
 
 /**
@@ -92,7 +92,7 @@ int setprecision(const char *string, param *p)
 		}
 	}
 
-	return offset;
+	return (offset);
 }
 
 /**
@@ -124,11 +124,11 @@ int setspecifier(const char *string, param *p, spec *specs)
 		if (match && (specs + i)->spec_string[offset] == '\0')
 		{
 			p->specifier = (specs + i);
-			return offset;
+			return (offset);
 		}
 	}
 
-	return -1;
+	return (-1);
 }
 
 /**

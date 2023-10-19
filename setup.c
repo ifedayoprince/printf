@@ -48,12 +48,12 @@ spec *get_specs(void)
 
 	ret_spec = malloc(sizeof(spec) * 26);
 	if (ret_spec == NULL)
-		return NULL;
+		return (NULL);
 
 	for (j = 0; j < 26; j++)
 		ret_spec[j] = specs[j];
 
-	return ret_spec;
+	return (ret_spec);
 }
 
 /**
@@ -77,11 +77,11 @@ int get_full(const char *string, spec *specs, param *res)
 
 	specifier = setspecifier(string + offset, res, specs);
 	if (specifier == -1)
-		return -1;
+		return (-1);
 
 	offset += specifier;
 
-	return offset;
+	return (offset);
 }
 
 /**
@@ -100,39 +100,39 @@ void *get_memory(spec s, va_list *valist)
 	case 'i':
 		vp = malloc(sizeof(int));
 		if (vp == NULL)
-			return NULL;
+			return (NULL);
 		*(int *)vp = va_arg(*valist, int);
-		return vp;
+		return (vp);
 
 	case 's':
 		vp = malloc(sizeof(char *));
 		if (vp == NULL)
-			return NULL;
+			return (NULL);
 		*(char **)vp = va_arg(*valist, char *);
-		return vp;
+		return (vp);
 
 	case 'I':
 		vp = malloc(sizeof(unsigned int));
 		if (vp == NULL)
-			return NULL;
+			return (NULL);
 		*(unsigned int *)vp = va_arg(*valist, unsigned int);
-		return vp;
+		return (vp);
 
 	case 'l':
 		vp = malloc(sizeof(long int));
 		if (vp == NULL)
-			return NULL;
+			return (NULL);
 		*(long int *)vp = va_arg(*valist, long int);
-		return vp;
+		return (vp);
 
 	case 'L':
 		vp = malloc(sizeof(unsigned long));
 		if (vp == NULL)
-			return NULL;
+			return (NULL);
 		*(unsigned long *)vp = va_arg(*valist, unsigned long);
-		return vp;
+		return (vp);
 	}
 
-	return NULL;
+	return (NULL);
 }
 

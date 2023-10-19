@@ -30,7 +30,7 @@ int base_converter(unsigned int num, unsigned int base, char *set)
 		_putchar(buffer[i]);
 	}
 
-	return charCount;
+	return (charCount);
 }
 
 /**
