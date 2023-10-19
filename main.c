@@ -1,4 +1,4 @@
-/**
+/*
  * File: main.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

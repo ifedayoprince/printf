@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_long_hex.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

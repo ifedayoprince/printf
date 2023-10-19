@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_special.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

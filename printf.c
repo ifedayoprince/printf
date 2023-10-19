@@ -1,4 +1,4 @@
-/**
+/*
  * File: printf.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

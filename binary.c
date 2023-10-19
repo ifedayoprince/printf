@@ -1,4 +1,4 @@
-/**
+/*
  * File: binary.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

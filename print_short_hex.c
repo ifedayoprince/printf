@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_short_hex.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

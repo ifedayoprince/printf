@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_dec.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

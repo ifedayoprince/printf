@@ -1,4 +1,4 @@
-/**
+/*
  * File: pointer_print.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

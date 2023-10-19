@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_reverse.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

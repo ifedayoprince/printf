@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_long_decimal.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

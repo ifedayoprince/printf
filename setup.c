@@ -1,4 +1,4 @@
-/**
+/*
  * File: setup.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

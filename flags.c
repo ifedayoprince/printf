@@ -1,4 +1,4 @@
-/**
+/*
  * File: flags.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

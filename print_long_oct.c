@@ -1,4 +1,4 @@
-/**
+/*
  * File: print_long_oct.c
  * Auth: Ifedayo P Oni
  *       Tiyani Chauke

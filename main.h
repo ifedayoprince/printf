@@ -1,6 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/*
+ * File: main.h
+ * Auth: Ifedayo P Oni
+ *       Tiyani Chauke
+ */
+
 #include <stdarg.h>
 
 typedef struct specifier spec;
