@@ -80,41 +80,44 @@ int get_full(const char *string, spec *specs, param *res)
  */
 void *get_memory(spec s, va_list *valist)
 {
-    void *vp = NULL;
-    size_t size = 0;
+	void *vp;
 
-    switch (s.type)
-    {
-        case 'i':
-            size = sizeof(int);
-            vp = malloc(size);
-            if (vp != NULL) *(int *)vp = va_arg(*valist, int);
-            break;
+	switch (s.type)
+	{
+	case 'i':
+		vp = malloc(sizeof(int));
+		if (vp == NULL)
+			return (NULL);
+		*(int *)vp = va_arg(*valist, int);
+		return (vp);
+	case 's':
+		vp = malloc(sizeof(char *));
+		if (vp == NULL)
+			return (NULL);
+		*(char **)vp = va_arg(*valist, char *);
+		return (vp);
 
-        case 's':
-            size = sizeof(char *);
-            vp = malloc(size);
-            if (vp != NULL) *(char **)vp = va_arg(*valist, char *);
-            break;
+	case 'I':
+		vp = malloc(sizeof(unsigned int));
+		if (vp == NULL)
+			return (NULL);
+		*(unsigned int *)vp = va_arg(*valist, unsigned int);
+		return (vp);
 
-        case 'I':
-            size = sizeof(unsigned int);
-            vp = malloc(size);
-            if (vp != NULL) *(unsigned int *)vp = va_arg(*valist, unsigned int);
-            break;
+	case 'l':
+		vp = malloc(sizeof(long int));
+		if (vp == NULL)
+			return (NULL);
+		*(long int *)vp = va_arg(*valist, long int);
+		return (vp);
 
-        case 'l':
-            size = sizeof(long int);
-            vp = malloc(size);
-            if (vp != NULL) *(long int *)vp = va_arg(*valist, long int);
-            break;
+	case 'L':
+		vp = malloc(sizeof(unsigned long));
+		if (vp == NULL)
+			return (NULL);
+		*(unsigned long *)vp = va_arg(*valist, unsigned long);
+		return (vp);
+	}
 
-        case 'L':
-            size = sizeof(unsigned long);
-            vp = malloc(size);
-            if (vp != NULL) *(unsigned long *)vp = va_arg(*valist, unsigned long);
-            break;
-    }
-
-    return vp;
+	return (NULL);
 }
