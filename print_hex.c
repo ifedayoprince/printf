@@ -10,7 +10,7 @@
  * base_converter - Custom base conversion and printing function
  * @num: The unsigned integer to be converted and printed
  * @base: The base to be converted to
- * @set: The set of characters for base conversion, 
+ * @set: The set of characters for base conversion,
  *           e.g., "0123456789abcdef" for hexadecimal
  *
  * Return: The number of characters printed
@@ -20,7 +20,8 @@ int base_converter(unsigned int num, unsigned int base, char *set)
 	char buffer[32];
 	int charCount = 0, i;
 
-	do {
+	do
+	{
 		buffer[charCount++] = set[num % base];
 		num /= base;
 	} while (num > 0);
@@ -56,7 +57,7 @@ int print_hex(void *numPtr, param params)
 }
 
 /**
- * print_hex_upper - Custom function to print an unsigned 
+ * print_hex_upper - Custom function to print an unsigned
  *                  integer as a hexadecimal in uppercase
  * @numPtr: Pointer to an unsigned integer
  * @params: A structure containing information about the argument
@@ -79,7 +80,7 @@ int print_hex_upper(void *numPtr, param params)
 }
 
 /**
- * print_hex_unsigned - Prints an unsigned integer as a 
+ * print_hex_unsigned - Prints an unsigned integer as a
  *                      hexidecimal in uppercase format
  * @uhp: Void pointer to an adress in memory which holds an unsigned integer
  * @params: a structure containing info about the argument

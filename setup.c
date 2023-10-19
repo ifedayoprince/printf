@@ -19,19 +19,7 @@ spec *get_specs(void)
 	int j;
 	spec *ret_spec;
 	spec specs[] = {
-		{"i", print_decimal, 'i'}, {"d", print_decimal, 'i'},
-		{"s", print_string, 's'}, {"c", print_char, 'i'},
-		{"x", print_hex, 'I'}, {"X", print_hex_unsigned, 'I'},
-		{"o", print_octal, 'I'}, {"u", print_unsigned, 'I'},
-		{"b", print_binary, 'I'}, {"r", print_reverse, 's'},
-		{"S", print_special, 's'}, {"R", print_rot, 's'},
-		{"p", print_pointer, 'L'}, {"li", print_long_decimal, 'l'},
-		{"ld", print_long_decimal, 'l'}, {"lu", print_unsigned_long_decimal, 'L'},
-		{"lx", print_long_hex, 'L'}, {"lX", print_long_hex_unsigned, 'L'},
-		{"lo", print_octal_long, 'L'}, {"hu", print_unsigned_short_decimal, 'i'},
-		{"hd", print_short_decimal, 'i'}, {"hi", print_short_decimal, 'i'},
-		{"ho", print_octal_short, 'i'}, {"hx", print_short_hex, 'i'},
-		{"hX", print_short_hex_unsigned, 'i'}, {NULL, NULL, '\0'}};
+		{"i", print_decimal, 'i'}, {"d", print_decimal, 'i'}, {"s", print_string, 's'}, {"c", print_char, 'i'}, {"x", print_hex, 'I'}, {"X", print_hex_unsigned, 'I'}, {"o", print_octal, 'I'}, {"u", print_unsigned, 'I'}, {"b", print_binary, 'I'}, {"r", print_reverse, 's'}, {"S", print_special, 's'}, {"R", print_rot, 's'}, {"p", print_pointer, 'L'}, {"li", print_long_decimal, 'l'}, {"ld", print_long_decimal, 'l'}, {"lu", print_unsigned_long_decimal, 'L'}, {"lx", print_long_hex, 'L'}, {"lX", print_long_hex_unsigned, 'L'}, {"lo", print_octal_long, 'L'}, {"hu", print_unsigned_short_decimal, 'i'}, {"hd", print_short_decimal, 'i'}, {"hi", print_short_decimal, 'i'}, {"ho", print_octal_short, 'i'}, {"hx", print_short_hex, 'i'}, {"hX", print_short_hex_unsigned, 'i'}, {NULL, NULL, '\0'}};
 
 	ret_spec = malloc(sizeof(spec) * 26);
 	if (ret_spec == NULL)
@@ -90,7 +78,6 @@ void *get_memory(spec s, va_list *valist)
 			return (NULL);
 		*(int *)vp = va_arg(*valist, int);
 		return (vp);
-
 	case 's':
 		vp = malloc(sizeof(char *));
 		if (vp == NULL)
@@ -114,11 +101,11 @@ void *get_memory(spec s, va_list *valist)
 
 	case 'L':
 		vp = malloc(sizeof(unsigned long));
-		if (vp == NULL) return (NULL);
+		if (vp == NULL)
+			return (NULL);
 		*(unsigned long *)vp = va_arg(*valist, unsigned long);
 		return (vp);
 	}
 
 	return (NULL);
 }
-
