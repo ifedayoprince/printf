@@ -16,21 +16,21 @@
  */
 int base_converter(unsigned int num, unsigned int base, char *set)
 {
-    char buffer[32];
-    int charCount = 0, i;
+	char buffer[32];
+	int charCount = 0, i;
 
-    do
-    {
-        buffer[charCount++] = set[num % base];
-        num /= base;
-    } while (num > 0);
+	do
+	{
+		buffer[charCount++] = set[num % base];
+		num /= base;
+	} while (num > 0);
 
-    for (i = charCount - 1; i >= 0; i--)
-    {
-        _putchar(buffer[i]);
-    }
+	for (i = charCount - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
+	}
 
-    return charCount;
+	return charCount;
 }
 
 /**
@@ -41,18 +41,18 @@ int base_converter(unsigned int num, unsigned int base, char *set)
  */
 int print_hex(void *numPtr, param params)
 {
-    unsigned int hexValue = *(unsigned int *)numPtr;
-    char *characterSet = "0123456789abcdef";
-    int charCount = 0;
+	unsigned int hexValue = *(unsigned int *)numPtr;
+	char *characterSet = "0123456789abcdef";
+	int charCount = 0;
 
-    if (params.pound && hexValue != 0)
-    {
-        _putchar('0');
-        _putchar('x');
-        charCount += 2;
-    }
+	if (params.pound && hexValue != 0)
+	{
+		_putchar('0');
+		_putchar('x');
+		charCount += 2;
+	}
 
-    return base_converter(hexValue, 16, characterSet) + charCount;
+	return base_converter(hexValue, 16, characterSet) + charCount;
 }
 
 /**
@@ -63,18 +63,18 @@ int print_hex(void *numPtr, param params)
  */
 int print_hex_upper(void *numPtr, param params)
 {
-    unsigned int hexValue = *(unsigned int *)numPtr;
-    char *characterSet = "0123456789ABCDEF";
-    int charCount = 0;
+	unsigned int hexValue = *(unsigned int *)numPtr;
+	char *characterSet = "0123456789ABCDEF";
+	int charCount = 0;
 
-    if (params.pound && hexValue != 0)
-    {
-        _putchar('0');
-        _putchar('X');
-        charCount += 2;
-    }
+	if (params.pound && hexValue != 0)
+	{
+		_putchar('0');
+		_putchar('X');
+		charCount += 2;
+	}
 
-    return base_converter(hexValue, 16, characterSet) + charCount;
+	return base_converter(hexValue, 16, characterSet) + charCount;
 }
 
 /**

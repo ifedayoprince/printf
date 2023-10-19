@@ -14,33 +14,33 @@
  */
 int print_pointer(void *p, param params)
 {
-    char *set = "0123456789abcdef";
-    unsigned long int ptr_ul = *(unsigned long int *)p;
-    int count = 0;
+	char *set = "0123456789abcdef";
+	unsigned long int ptr_ul = *(unsigned long int *)p;
+	int count = 0;
 
-    if (ptr_ul == 0)
-    {
-        _putchar('(');
-        _putchar('n');
-        _putchar('u');
-        _putchar('l');
-        _putchar('l');
-        _putchar(')');
-        return 6;
-    }
+	if (ptr_ul == 0)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		return 6;
+	}
 
-    if (params.plus)
-    {
-        count += _putchar('+');
-    }
-    else if (params.space)
-    {
-        count += _putchar(' ');
-    }
+	if (params.plus)
+	{
+		count += _putchar('+');
+	}
+	else if (params.space)
+	{
+		count += _putchar(' ');
+	}
 
-    _putchar('0');
-    _putchar('x');
-    return 2 + count + base_converter(ptr_ul, 16, set);
+	_putchar('0');
+	_putchar('x');
+	return 2 + count + base_converter(ptr_ul, 16, set);
 }
 
 /**

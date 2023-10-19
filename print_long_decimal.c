@@ -15,17 +15,17 @@
  */
 int print_long_decimal(void *ip, param params)
 {
-    long int decimal = *(long int *)ip;
-    int count = 0;
+	long int decimal = *(long int *)ip;
+	int count = 0;
 
-    if (params.plus && decimal > -1)
-        count += _putchar('+');
-    else if (params.space && decimal > -1)
-        count += _putchar(' ');
+	if (params.plus && decimal > -1)
+		count += _putchar('+');
+	else if (params.space && decimal > -1)
+		count += _putchar(' ');
 
-    print_long_number(decimal);
+	print_long_number(decimal);
 
-    return (getlen_long(decimal) + count + (decimal < 0 ? 1 : 0));
+	return (getlen_long(decimal) + count + (decimal < 0 ? 1 : 0));
 }
 
 /**
@@ -34,19 +34,19 @@ int print_long_decimal(void *ip, param params)
  */
 void print_long_number(long int n)
 {
-    long int i;
+	long int i;
 
-    if (n < 0)
-    {
-        _putchar('-');
-        for (i = 0; i < getlen_long(n); i++)
-            _putchar('0' + -getnum_long(n, i));
-    }
-    else
-    {
-        for (i = 0; i < getlen_long(n); i++)
-            _putchar('0' + getnum_long(n, i));
-    }
+	if (n < 0)
+	{
+		_putchar('-');
+		for (i = 0; i < getlen_long(n); i++)
+			_putchar('0' + -getnum_long(n, i));
+	}
+	else
+	{
+		for (i = 0; i < getlen_long(n); i++)
+			_putchar('0' + getnum_long(n, i));
+	}
 }
 
 /**
@@ -58,18 +58,18 @@ void print_long_number(long int n)
  */
 long int _pow_long(int a, int b)
 {
-    int i, ans;
+	int i, ans;
 
-    if (b <= 0)
-        return (1);
+	if (b <= 0)
+		return (1);
 
-    ans = a;
-    for (i = 0; i < b - 1; i++)
-    {
-        ans *= a;
-    }
+	ans = a;
+	for (i = 0; i < b - 1; i++)
+	{
+		ans *= a;
+	}
 
-    return (ans);
+	return (ans);
 }
 
 /**
@@ -81,11 +81,11 @@ long int _pow_long(int a, int b)
  */
 long int getnum_long(long int num, long int index)
 {
-    long int l;
+	long int l;
 
-    l = getlen_long(num);
-    num = num / _pow_long(10, l - 1 - index);
-    return (num % 10);
+	l = getlen_long(num);
+	num = num / _pow_long(10, l - 1 - index);
+	return (num % 10);
 }
 
 /**
@@ -96,13 +96,13 @@ long int getnum_long(long int num, long int index)
  */
 long int getlen_long(long int num)
 {
-    long int i;
+	long int i;
 
-    i = 1;
-    while (num > 9 || num < -9)
-    {
-        i++;
-        num /= 10;
-    }
-    return (i);
+	i = 1;
+	while (num > 9 || num < -9)
+	{
+		i++;
+		num /= 10;
+	}
+	return (i);
 }

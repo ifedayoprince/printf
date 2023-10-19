@@ -14,24 +14,24 @@
  */
 int print_binary(void *ip, param params)
 {
-    unsigned int n = *(unsigned int *)ip;
-    int count = 0;
-    (void)(params);
+	unsigned int n = *(unsigned int *)ip;
+	int count = 0;
+	(void)(params);
 
-    if (n == 0)
-    {
-        _putchar('0');
-        return 1;
-    }
+	if (n == 0)
+	{
+		_putchar('0');
+		return 1;
+	}
 
-    while (n > 0)
-    {
-        _putchar((n & 1) + '0');
-        n >>= 1;
-        count++;
-    }
+	while (n > 0)
+	{
+		_putchar((n & 1) + '0');
+		n >>= 1;
+		count++;
+	}
 
-    return count;
+	return count;
 }
 
 /**
@@ -42,12 +42,12 @@ int print_binary(void *ip, param params)
  */
 unsigned int u_pow(unsigned int a, unsigned int b)
 {
-    unsigned int result = 1, i;
+	unsigned int result = 1, i;
 
-    for (i = 0; i < b; i++)
-    {
-        result *= a;
-    }
+	for (i = 0; i < b; i++)
+	{
+		result *= a;
+	}
 
-    return result;
+	return result;
 }

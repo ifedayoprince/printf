@@ -17,37 +17,37 @@
  */
 int setflags(const char *string, param *p)
 {
-    unsigned int offset = 0;
+	unsigned int offset = 0;
 
-    while (string[offset] == '-' || string[offset] == '+' ||
-           string[offset] == '0' || string[offset] == ' ' || string[offset] == '#')
-    {
-        switch (string[offset])
-        {
-        case '-':
-            p->minus = 1;
-            break;
+	while (string[offset] == '-' || string[offset] == '+' ||
+		   string[offset] == '0' || string[offset] == ' ' || string[offset] == '#')
+	{
+		switch (string[offset])
+		{
+		case '-':
+			p->minus = 1;
+			break;
 
-        case '+':
-            p->plus = 1;
-            break;
+		case '+':
+			p->plus = 1;
+			break;
 
-        case '0':
-            p->zero = 1;
-            break;
+		case '0':
+			p->zero = 1;
+			break;
 
-        case ' ':
-            p->space = 1;
-            break;
+		case ' ':
+			p->space = 1;
+			break;
 
-        case '#':
-            p->pound = 1;
-            break;
-        }
-        offset++;
-    }
+		case '#':
+			p->pound = 1;
+			break;
+		}
+		offset++;
+	}
 
-    return offset;
+	return offset;
 }
 
 /**
@@ -59,15 +59,15 @@ int setflags(const char *string, param *p)
  */
 int setwidth(const char *string, param *p)
 {
-    int offset = 0;
+	int offset = 0;
 
-    while (string[offset] >= '0' && string[offset] <= '9')
-    {
-        p->width = p->width * 10 + (string[offset] - '0');
-        offset++;
-    }
+	while (string[offset] >= '0' && string[offset] <= '9')
+	{
+		p->width = p->width * 10 + (string[offset] - '0');
+		offset++;
+	}
 
-    return offset;
+	return offset;
 }
 
 /**
@@ -79,20 +79,20 @@ int setwidth(const char *string, param *p)
  */
 int setprecision(const char *string, param *p)
 {
-    int offset = 0;
+	int offset = 0;
 
-    if (string[offset] == '.' && isdig(string[offset + 1]))
-    {
-        offset++;
-        p->precision = 0;
-        while (isdig(string[offset]))
-        {
-            p->precision = p->precision * 10 + (string[offset] - '0');
-            offset++;
-        }
-    }
+	if (string[offset] == '.' && isdig(string[offset + 1]))
+	{
+		offset++;
+		p->precision = 0;
+		while (isdig(string[offset]))
+		{
+			p->precision = p->precision * 10 + (string[offset] - '0');
+			offset++;
+		}
+	}
 
-    return offset;
+	return offset;
 }
 
 /**
@@ -106,29 +106,29 @@ int setprecision(const char *string, param *p)
  */
 int setspecifier(const char *string, param *p, spec *specs)
 {
-    int offset = 0;
-    int i;
+	int offset = 0;
+	int i;
 
-    for (i = 0; (specs + i)->type != '\0'; i++)
-    {
-        int match = 1;
-        for (offset = 0; string[offset] && (specs + i)->spec_string[offset] != '\0'; offset++)
-        {
-            if (string[offset] != (specs + i)->spec_string[offset])
-            {
-                match = 0;
-                break;
-            }
-        }
+	for (i = 0; (specs + i)->type != '\0'; i++)
+	{
+		int match = 1;
+		for (offset = 0; string[offset] && (specs + i)->spec_string[offset] != '\0'; offset++)
+		{
+			if (string[offset] != (specs + i)->spec_string[offset])
+			{
+				match = 0;
+				break;
+			}
+		}
 
-        if (match && (specs + i)->spec_string[offset] == '\0')
-        {
-            p->specifier = (specs + i);
-            return offset;
-        }
-    }
+		if (match && (specs + i)->spec_string[offset] == '\0')
+		{
+			p->specifier = (specs + i);
+			return offset;
+		}
+	}
 
-    return -1;
+	return -1;
 }
 
 /**
@@ -139,5 +139,5 @@ int setspecifier(const char *string, param *p, spec *specs)
  */
 int isdig(char c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

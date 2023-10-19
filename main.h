@@ -49,7 +49,7 @@ typedef struct parameters
 struct specifier
 {
 	char *spec_string;
-	int (*func) (void *, param);
+	int (*func)(void *, param);
 	char type;
 };
 
@@ -66,7 +66,6 @@ int setprecision(const char *string, param *p);
 int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
 int get_full(const char *string, spec *specs, param *);
-
 
 int print_decimal(void *, param);
 int print_string(void *, param);
@@ -85,7 +84,6 @@ int print_binary(void *, param);
 unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *, param);
 int print_rot(void *, param);
-
 
 /* short number functions */
 int short_base_converter(unsigned short int, unsigned short int, char *);
@@ -109,7 +107,6 @@ long int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
 int print_unsigned_long_decimal(void *ulivp, param params);
-
 
 int print_short_decimal(void *ip, param p);
 void print_short_number(short int n);
