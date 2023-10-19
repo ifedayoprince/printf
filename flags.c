@@ -112,7 +112,9 @@ int setspecifier(const char *string, param *p, spec *specs)
 	for (i = 0; (specs + i)->type != '\0'; i++)
 	{
 		int match = 1;
-		for (offset = 0; string[offset] && (specs + i)->spec_string[offset] != '\0'; offset++)
+		
+		for (offset = 0; string[offset] && 
+			(specs + i)->spec_string[offset] != '\0'; offset++)
 		{
 			if (string[offset] != (specs + i)->spec_string[offset])
 			{

@@ -40,7 +40,7 @@ int print_pointer(void *p, param params)
 
 	_putchar('0');
 	_putchar('x');
-	return 2 + count + base_converter(ptr_ul, 16, set);
+	return (2 + count + base_converter(ptr_ul, 16, set));
 }
 
 /**

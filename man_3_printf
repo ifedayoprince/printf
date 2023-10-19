@@ -60,7 +60,7 @@ Each of these flags will define a way that \fB_printf\fR() prints.
        Works with signed ints only.
 .br
        NOTE: if both + and (space) are used, \fB_printf\fR will ignore the
-.br	
+.br
        (space) and print +.
 .PP
 \fB#\fR      Prefixes octals and hexes with their appropriate prefix.
@@ -70,7 +70,7 @@ Each of these flags will define a way that \fB_printf\fR() prints.
        OCTAL: '0'
 .br
        HEX: '0x' or '0X' respectively.
-.PP	    
+.PP
 .SH AUTHORS
 Ifedayo P Oni and Tiyani Chauke
 

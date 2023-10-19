@@ -15,7 +15,8 @@
  * "0123456789abcdef" for hexadecimal.
  * Return: the number of characters printed.
  */
-int short_base_converter(unsigned short int i, unsigned short int base, char *set)
+int short_base_converter(unsigned short int i, 
+		unsigned short int base, char *set)
 {
 	int count = 1;
 
@@ -49,8 +50,8 @@ int print_short_hex(void *suhp, param params)
 }
 
 /**
- * print_short_hex_unsigned - Prints a long unsigned integer as a hexadecimal in
- * uppercase format.
+ * print_short_hex_unsigned - Prints a long unsigned integer as a hexadecimal
+ *                            in uppercase format.
  * @suhp: Void pointer to an address in memory which holds a long unsigned int.
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
