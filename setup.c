@@ -42,6 +42,34 @@ void *get_memory(spec s, va_list *valist)
 }
 
 /**
+ * get_full - Extracts the full set of flags, width, precision, and the
+ * specifier from the format string
+ * @string: Pointer to the format string
+ * @specs: Pointer to the list of specifiers
+ * @res: Pointer to the param struct to change the attributes of
+ *
+ * Return: Number of characters contained in the specifier including all
+ * flags, width, precision, and specifiers (excluding the %)
+ */
+int get_full(const char *string, spec *specs, param *res)
+{
+	int offset = 0;
+	int specifier;
+
+	offset = setflags(string, res);
+	offset += setwidth(string + offset, res);
+	offset += setprecision(string + offset, res);
+
+	specifier = setspecifier(string + offset, res, specs);
+	if (specifier == -1)
+		return (-1);
+
+	offset += specifier;
+
+	return (offset);
+}
+
+/**
  * get_specs - Provides a pointer to allocated space containing predefined
  * spec structs
  *
@@ -75,32 +103,3 @@ spec *get_specs(void)
 
 	return (ret_spec);
 }
-
-/**
- * get_full - Extracts the full set of flags, width, precision, and the
- * specifier from the format string
- * @string: Pointer to the format string
- * @specs: Pointer to the list of specifiers
- * @res: Pointer to the param struct to change the attributes of
- *
- * Return: Number of characters contained in the specifier including all
- * flags, width, precision, and specifiers (excluding the %)
- */
-int get_full(const char *string, spec *specs, param *res)
-{
-	int offset = 0;
-	int specifier;
-
-	offset = setflags(string, res);
-	offset += setwidth(string + offset, res);
-	offset += setprecision(string + offset, res);
-
-	specifier = setspecifier(string + offset, res, specs);
-	if (specifier == -1)
-		return (-1);
-
-	offset += specifier;
-
-	return (offset);
-}
-
