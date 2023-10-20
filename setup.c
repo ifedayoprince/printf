@@ -24,18 +24,23 @@ void *get_memory(spec s, va_list *valist)
 	case 'i':
 		vp = malloc(sizeof(int));
 		*(int *)vp = va_arg(*valist, int);
+		break;
 	case 's':
 		vp = malloc(sizeof(char *));
 		*(char **)vp = va_arg(*valist, char *);
+		break;
 	case 'I':
 		vp = malloc(sizeof(unsigned int));
 		*(unsigned int *)vp = va_arg(*valist, unsigned int);
+		break;
 	case 'l':
 		vp = malloc(sizeof(long int));
 		*(long int *)vp = va_arg(*valist, long int);
+		break;
 	case 'L':
 		vp = malloc(sizeof(unsigned long));
 		*(unsigned long *)vp = va_arg(*valist, unsigned long);
+		break;
 	}
 
 	return (vp);
