@@ -71,9 +71,9 @@ int print_decimal(void *, param);
 int print_string(void *, param);
 int print_char(void *, param);
 int print_hex(void *, param);
-int print_hex_unsigned(void *, param);
+int print_hex_unsig(void *, param);
 int print_octal(void *, param);
-int print_unsigned(void *, param);
+int print_unsig(void *, param);
 int print_special(void *, param);
 
 void *get_memory(spec, va_list *);
@@ -88,14 +88,14 @@ int print_rot(void *, param);
 /* short number functions */
 int short_base_converter(unsigned short int, unsigned short int, char *);
 int print_short_hex(void *, param);
-int print_short_hex_unsigned(void *, param);
+int print_short_hex_unsig(void *, param);
 int print_octal_short(void *, param);
 int print_unsigned_short(void *, param);
 
 /* long number functions */
 int long_base_converter(unsigned long int, unsigned long int, char *);
 int print_long_hex(void *, param);
-int print_long_hex_unsigned(void *, param);
+int print_long_hex_unsig(void *, param);
 int print_unsigned_long(void *, param);
 int print_pointer(void *, param);
 int print_octal_long(void *, param);

@@ -34,7 +34,7 @@ int long_base_converter(unsigned long int i, unsigned long int base, char *set)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_long_hex_unsigned(void *luhp, param params)
+int print_long_hex_unsig(void *luhp, param params)
 {
 	unsigned long int hex = *(unsigned long int *)luhp;
 	char *set = "0123456789ABCDEF";

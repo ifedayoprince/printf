@@ -105,7 +105,7 @@ int print_unsigned_short(void *suip, param params)
  * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
-int print_unsigned(void *uip, param params)
+int print_unsig(void *uip, param params)
 {
 	unsigned int i = *(unsigned int *)uip;
 	(void)(params);

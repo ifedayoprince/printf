@@ -86,7 +86,7 @@ int print_hex_upper(void *numPtr, param params)
  * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
-int print_hex_unsigned(void *uhp, param params)
+int print_hex_unsig(void *uhp, param params)
 {
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789ABCDEF";

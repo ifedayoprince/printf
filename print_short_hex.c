@@ -56,7 +56,7 @@ int print_short_hex(void *suhp, param params)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_short_hex_unsigned(void *suhp, param params)
+int print_short_hex_unsig(void *suhp, param params)
 {
 	unsigned short int hex = *(unsigned short int *)suhp;
 	char *set = "0123456789abcdef";
