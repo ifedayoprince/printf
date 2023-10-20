@@ -20,8 +20,7 @@ int base_converter(unsigned int num, unsigned int base, char *set)
 	char buffer[32];
 	int charCount = 0, i;
 
-	do
-	{
+	do {
 		buffer[charCount++] = set[num % base];
 		num /= base;
 	} while (num > 0);
@@ -80,7 +79,7 @@ int print_hex_upper(void *numPtr, param params)
 }
 
 /**
- * print_hex_unsigned - Prints an unsigned integer as a
+ * print_hex_unsig - Prints an unsigned integer as a
  *                      hexidecimal in uppercase format
  * @uhp: Void pointer to an adress in memory which holds an unsigned integer
  * @params: a structure containing info about the argument
